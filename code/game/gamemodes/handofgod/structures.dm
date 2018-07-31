@@ -19,6 +19,7 @@
 	density = 1
 	var/constructable = TRUE
 	var/trap = FALSE // for hog list purposes
+	var/can_be_captured = TRUE
 	var/metal_cost = 0
 	var/glass_cost = 0
 	var/lesser_gem_cost = 0
@@ -63,7 +64,7 @@
 		return 0
 
 	//Structure conversion/capture
-	if(istype(I, /obj/item/weapon/godstaff))
+	if(istype(I, /obj/item/weapon/godstaff) && can_be_captured)
 		if(!is_in_any_team(user.mind))
 			user << "<span class='notice'>You're not quite sure what the hell you're even doing.</span>"
 			return
@@ -234,6 +235,7 @@
 	maxhealth = 500
 	constructable = FALSE
 	overlay_icon_state = "nexus-overlay"
+	can_be_captured = FALSE
 	var/faith_regen_rate = 1
 	var/list/powerpylons = list()
 
@@ -572,6 +574,7 @@
 	metal_cost = 25
 	glass_cost = 30
 	overlay_icon_state = "defensepylonoffline-overlay"
+	can_be_captured = FALSE
 	var/obj/machinery/gun_turret/defensepylon_internal_turret/pylon_gun
 
 
