@@ -64,7 +64,7 @@
 	set desc = "Join the discord server."
 	set hidden = 1
 	if(config.teamspeakurl)
-		if(alert("This will open the discord server in your brwoser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open the discord server in your browser. Are you sure?",,"Yes","No")=="No")
 			return
 		src << link(config.teamspeakurl)
 	else
