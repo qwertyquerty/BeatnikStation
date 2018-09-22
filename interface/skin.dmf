@@ -1204,7 +1204,7 @@ window "rpane"
 		background-color = none
 		saved-params = "is-checked"
 		text = "Discord"
-		command = "Teamspeak"
+		command = "Discord"
 		group = "rpanemode"
 	elem "reportissueb"
 		type = BUTTON
