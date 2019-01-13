@@ -182,9 +182,10 @@
 
 /obj/item/weapon/paper/proc/updateinfolinks()
 	info_links = info
-	for(var/i in 1 to min(fields, 15))
-		addtofield(i, "<font face=\"[PEN_FONT]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", 1)
-	info_links = info_links + "<font face=\"[PEN_FONT]\"><A href='?src=\ref[src];write=end'>write</A></font>"
+	if(src.fields > 0)
+		for(var/i in min(src.fields, 15))
+			addtofield(i, "<font face=\"[PEN_FONT]\"><A href='byond://?src=\ref[src];write=[i]'>write</A></font>")
+	info_links = info_links + "<font face=\"[PEN_FONT]\"><A href='byond://?src=\ref[src];write=end'>write</A></font>"
 
 
 /obj/item/weapon/paper/proc/clearpaper()
@@ -326,6 +327,7 @@
 		if(istype(src, /obj/item/weapon/paper/talisman/))
 			user << "<span class='warning'>[P]'s ink fades away shortly after it is written.</span>"
 			return
+		updateinfolinks()
 
 	else if(istype(P, /obj/item/weapon/stamp))
 		if(!in_range(src, usr) && loc != user && !istype(loc, /obj/item/weapon/clipboard) && loc.loc != user && user.get_active_hand() != P)
