@@ -14,6 +14,8 @@
 	var/verb_yell = "yells"
 	var/inertia_dir = 0
 	var/pass_flags = 0
+	var/last_bumped_field = 0 //time since the last collission with singulo containment field
+	var/times_bumped_field = 0 //number of collissions so far
 	glide_size = 8
 	appearance_flags = TILE_BOUND
 

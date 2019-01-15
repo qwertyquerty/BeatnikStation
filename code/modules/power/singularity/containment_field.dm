@@ -43,7 +43,8 @@
 
 /obj/machinery/field/containment/Crossed(obj/mover)
 	if(istype(mover, /obj/machinery) || istype(mover, /obj/structure) || istype(mover, /obj/mecha))
-		bump_field(mover)
+		spawn(1) //stops things from bouncing between 2 force fields 9999 times a second creating billions of sparks to lag the server to death. a delay in the bump_field itself only affects mobs for some fucking reason unless there's another delay here
+			bump_field(mover)
 
 /obj/machinery/field/containment/proc/set_master(master1,master2)
 	if(!master1 || !master2)
@@ -77,7 +78,8 @@
 	if((istype(mover, /obj/machinery) && !istype(mover, /obj/singularity)) || \
 		istype(mover, /obj/structure) || \
 		istype(mover, /obj/mecha))
-		bump_field(mover)
+		spawn(1)
+			bump_field(mover)
 		return 0
 	return ..()
 
@@ -113,8 +115,25 @@
 	return
 
 /obj/machinery/field/proc/bump_field(atom/movable/AM as mob|obj)
+	sleep(5) // half a second delay
+	if(AM.pulledby) //if someone's pulling, stop them
+		AM.pulledby.stop_pulling()
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(5, 1, AM.loc)
 	s.start()
 	var/atom/target = get_edge_target_turf(AM, get_dir(src, get_step_away(AM, src)))
 	AM.throw_at(target, 200, 4)
+	AM.times_bumped_field++
+	if(AM.last_bumped_field == -1)
+		return
+	if(AM.last_bumped_field == 0) //first bump
+		AM.last_bumped_field = world.time
+	else
+		if(world.time - AM.last_bumped_field < 50 && AM.times_bumped_field > 20) //if something bounced more than 20 times and it's been less than 5 seconds since last bounce, alert admins
+			var/mob/last = get_mob_by_ckey(AM.fingerprintslast)
+			var/turf/T = get_turf(AM)
+			var/area/A = get_area(T)
+			message_admins("Warning! [AM.name] is bouncing off the containment field too often in <A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[AM.x];Y=[AM.y];Z=[AM.z]'>[A.name]</a>, last touched by: [last]! Might be a shitter trying to lag the server. There will be no more alerts for this object. You better check it out, bro!")
+			AM.last_bumped_field = -1 //set to -1 to fail the next check and not spam the admins
+		else
+			AM.last_bumped_field = world.time
