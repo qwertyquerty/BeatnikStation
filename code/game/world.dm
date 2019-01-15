@@ -6,15 +6,6 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 	map_ready = 1
 
-#if (PRELOAD_RSC == 0)
-	external_rsc_urls = file2list("config/external_rsc_urls.txt","\n")
-	var/i=1
-	while(i<=external_rsc_urls.len)
-		if(external_rsc_urls[i])
-			i++
-		else
-			external_rsc_urls.Cut(i,i+1)
-#endif
 	//logs
 	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
 	href_logfile = file("data/logs/[date_string] hrefs.htm")
@@ -70,6 +61,16 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 	return
 
+/world/proc/SetupExternalRSC()
+#if (PRELOAD_RSC == 0)
+	external_rsc_urls = file2list("config/external_rsc_urls.txt","\n")
+	var/i=1
+	while(i<=external_rsc_urls.len)
+		if(external_rsc_urls[i])
+			i++
+		else
+			external_rsc_urls.Cut(i,i+1)
+#endif
 
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC

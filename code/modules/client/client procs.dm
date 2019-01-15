@@ -100,10 +100,6 @@
 	///////////
 	//CONNECT//
 	///////////
-#if (PRELOAD_RSC == 0)
-var/list/external_rsc_urls
-var/next_external_rsc = 0
-#endif
 
 
 /client/New(TopicData)
@@ -114,12 +110,6 @@ var/next_external_rsc = 0
 		return null
 	if(byond_version < MIN_CLIENT_VERSION)		//Out of date client.
 		return null
-
-#if (PRELOAD_RSC == 0)
-	if(external_rsc_urls && external_rsc_urls.len)
-		next_external_rsc = Wrap(next_external_rsc+1, 1, external_rsc_urls.len+1)
-		preload_rsc = external_rsc_urls[next_external_rsc]
-#endif
 
 	clients += src
 	directory[ckey] = src
@@ -418,6 +408,12 @@ var/next_external_rsc = 0
 
 //send resources to the client. It's here in its own proc so we can move it around easiliy if need be
 /client/proc/send_resources()
+#if (PRELOAD_RSC == 0)
+	var/static/next_external_rsc = 0
+	if(external_rsc_urls && external_rsc_urls.len)
+		next_external_rsc = Wrap(next_external_rsc+1, 1, external_rsc_urls.len+1)
+		preload_rsc = external_rsc_urls[next_external_rsc]
+#endif
 	//get the common files
 	getFiles(
 		'html/search.js',

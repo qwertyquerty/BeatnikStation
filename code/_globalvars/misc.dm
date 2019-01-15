@@ -8,7 +8,7 @@ var/fileaccess_timer = 0
 
 var/TAB = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
-
+var/list/external_rsc_urls = "" // For CDN
 
 var/map_ready = 0
 /*
