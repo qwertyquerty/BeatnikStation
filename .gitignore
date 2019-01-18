@@ -15,10 +15,3 @@
 *.db
 .atom-build.json
 .atom-build.json
-
-# Backup maps created by maptools
-*.before
-__pycache__/
-
-# Thumbs.db (windows image caching)
-Thumbs.db
