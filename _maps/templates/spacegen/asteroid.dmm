@@ -1,28 +1,321 @@
-"a" = (/turf/space,/area/space)
-"b" = (/turf/simulated/mineral,/area/space)
-"c" = (/turf/simulated/wall/mineral/clown,/area/space)
-"d" = (/turf/simulated/wall/mineral/plasma,/area/space)
-"e" = (/obj/item/device/meeseeks_box,/turf/simulated/floor/plating/asteroid/airless,/area/space)
-"f" = (/turf/simulated/floor/plating/asteroid/airless,/area/space)
-"g" = (/obj/machinery/door/airlock/clown,/turf/simulated/floor/plating/asteroid/airless,/area/space)
-"h" = (/obj/item/device/wormhole_jaunter,/turf/simulated/floor/plating/asteroid/airless,/area/space)
-"i" = (/mob/living/simple_animal/hostile/carp,/turf/simulated/floor/plating/asteroid/airless,/area/space)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/space,
+/area/space)
+"b" = (
+/turf/simulated/mineral,
+/area/space)
+"c" = (
+/turf/simulated/wall/mineral/clown,
+/area/space)
+"d" = (
+/turf/simulated/wall/mineral/plasma,
+/area/space)
+"e" = (
+/obj/item/device/meeseeks_box,
+/turf/simulated/floor/plating/asteroid/airless,
+/area/space)
+"f" = (
+/turf/simulated/floor/plating/asteroid/airless,
+/area/space)
+"g" = (
+/obj/machinery/door/airlock/clown,
+/turf/simulated/floor/plating/asteroid/airless,
+/area/space)
+"h" = (
+/obj/item/device/wormhole_jaunter,
+/turf/simulated/floor/plating/asteroid/airless,
+/area/space)
+"i" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/simulated/floor/plating/asteroid/airless,
+/area/space)
 
 (1,1,1) = {"
-aaaaabbbbbbaaaaa
-abbbbbbbbbbaaaaa
-bbcddcbbbbbaaaaa
-bbdefgfffbbbaaaa
-bbdhfgfffibbbaaa
-bbcddcfffbbbbaaa
-bbbbbbffffbbbbaa
-abifffffffbbbbaa
-abbffffffibbbbaa
-abbbbbbffbbbbbaa
-abbbbfffbbbbbbaa
-abbfbffbbbbbaaaa
-abbfffbbbbbaaaaa
-abbffbbbaaaaaaaa
-abfffbaaaaaaaaaa
-aaaffbaaaaaaaaaa
+a
+a
+b
+b
+b
+b
+b
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+"}
+(3,1,1) = {"
+a
+b
+c
+d
+d
+c
+b
+i
+b
+b
+b
+b
+b
+b
+f
+a
+"}
+(4,1,1) = {"
+a
+b
+d
+e
+h
+d
+b
+f
+f
+b
+b
+f
+f
+f
+f
+f
+"}
+(5,1,1) = {"
+a
+b
+d
+f
+f
+d
+b
+f
+f
+b
+b
+b
+f
+f
+f
+f
+"}
+(6,1,1) = {"
+b
+b
+c
+g
+g
+c
+b
+f
+f
+b
+f
+f
+f
+b
+b
+b
+"}
+(7,1,1) = {"
+b
+b
+b
+f
+f
+f
+f
+f
+f
+b
+f
+f
+b
+b
+a
+a
+"}
+(8,1,1) = {"
+b
+b
+b
+f
+f
+f
+f
+f
+f
+f
+f
+b
+b
+b
+a
+a
+"}
+(9,1,1) = {"
+b
+b
+b
+f
+f
+f
+f
+f
+f
+f
+b
+b
+b
+a
+a
+a
+"}
+(10,1,1) = {"
+b
+b
+b
+b
+i
+b
+f
+f
+i
+b
+b
+b
+b
+a
+a
+a
+"}
+(11,1,1) = {"
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+a
+a
+"}
+(12,1,1) = {"
+a
+a
+a
+b
+b
+b
+b
+b
+b
+b
+b
+b
+a
+a
+a
+a
+"}
+(13,1,1) = {"
+a
+a
+a
+a
+b
+b
+b
+b
+b
+b
+b
+a
+a
+a
+a
+a
+"}
+(14,1,1) = {"
+a
+a
+a
+a
+a
+a
+b
+b
+b
+b
+b
+a
+a
+a
+a
+a
+"}
+(15,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(16,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
 "}
