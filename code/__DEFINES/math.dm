@@ -9,3 +9,6 @@
 #define T0C						273.15	// 0degC
 #define T20C					293.15	// 20degC
 #define TCMB					2.7		// -270.3degC
+
+// Why the fuck this not a thing
+#define CLAMP(CLVALUE,CLMIN,CLMAX) ( max( (CLMIN), min((CLVALUE), (CLMAX)) ) )

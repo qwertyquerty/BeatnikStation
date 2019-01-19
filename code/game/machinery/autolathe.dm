@@ -193,6 +193,7 @@
 					return
 			else
 				multiplier = text2num(href_list["multiplier"])
+			multiplier = CLAMP(multiplier,1,50)
 			/////////////////
 
 			var/coeff = (is_stack ? 1 : 2 ** prod_coeff) //stacks are unaffected by production coefficient

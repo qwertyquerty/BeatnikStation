@@ -55,6 +55,8 @@
 	if(href_list["make"])
 		if(!wait)
 			var/p_type = text2path(href_list["make"])
+			if(!ispath(p_type, /obj/machinery/atmospherics))
+				return
 			var/p_dir = text2num(href_list["dir"])
 			var/obj/item/pipe/P = new (src.loc, pipe_type=p_type, dir=p_dir)
 			P.add_fingerprint(usr)
