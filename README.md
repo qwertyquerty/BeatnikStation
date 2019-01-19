@@ -1,6 +1,6 @@
 
 **Website:** https://affectedarc07.co.uk/Beatnik/ <BR>
-**Code:** https://github.com/AffectedArc07/Beatnik-Station <BR>
+**Code:** https://github.com/BeatnikStation/BeatnikStation <BR>
 
 # BELOW IS ALL TG COPYPASTE 
 
