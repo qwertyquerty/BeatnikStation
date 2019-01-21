@@ -103,6 +103,7 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 		var/admins = 0
 		var/mentors = 0
+		var/client_num = 0
 		for(var/client/C in clients)
 			var/mentor = mentor_datums[C.ckey]
 			if(mentor)
@@ -111,6 +112,9 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 				if(C.holder.fakekey)
 					continue	//so stealthmins aren't revealed by the hub
 				admins++
+			s["client[client_num]"] = C.key
+			client_num++
+
 
 		s["active_players"] = get_active_player_count()
 		s["players"] = clients.len
@@ -119,6 +123,7 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 		s["admins"] = admins
 		s["mentors"] = mentors
 		s["gamestate"] = 1
+		s["round_duration"] = ticker ? round((world.time-round_start_time)/10) : 0
 		if(ticker)
 			s["gamestate"] = ticker.current_state
 		s["map_name"] = map_name ? map_name : "Unknown"
