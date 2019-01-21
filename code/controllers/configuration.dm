@@ -199,6 +199,8 @@
 	var/proxykickemail = ""
 	var/proxykicklimit = 1 // ranges from 0 to 1
 
+	var/view_size = "15x15"
+
 /datum/configuration/New()
 	var/list/L = typesof(/datum/game_mode) - /datum/game_mode
 	for(var/T in L)
@@ -405,6 +407,8 @@
 					proxykickemail = value
 				if("proxykicklimit")
 					proxykicklimit = value
+				if("view_size")
+					view_size = value
 				else
 					diary << "Unknown setting in configuration: '[name]'"
 

@@ -30,6 +30,7 @@
 
 	client.images = null				//remove the images such as AIs being unable to see runes
 	client.screen = list()				//remove hud items just in case
+	client.view = config.view_size
 	if(hud_used)	qdel(hud_used)		//remove the hud objects
 	hud_used = new /datum/hud(src)
 
@@ -72,5 +73,3 @@
 
 /mob/proc/update_normal_mode()
 	if(client) winset(src, null, "mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5")
-
-

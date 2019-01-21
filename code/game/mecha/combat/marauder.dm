@@ -61,7 +61,7 @@
 /obj/mecha/combat/marauder/go_out()
 	if(src.occupant && src.occupant.client)
 		winset(src.occupant.client, "mapwindow.map", "icon-size=[src.reset_stretch]")
-		src.occupant.client.view = world.view
+		src.occupant.client.view = config.view_size
 		src.zoom = 0
 	..()
 	return
@@ -169,4 +169,4 @@
 			owner.client.view = 12
 			owner << sound('sound/mecha/imag_enh.ogg',volume=50)
 		else
-			owner.client.view = world.view//world.view - default mob view size
+			owner.client.view = config.view_size

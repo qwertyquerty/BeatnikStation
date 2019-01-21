@@ -12,3 +12,5 @@
 
 // Why the fuck this not a thing
 #define CLAMP(CLVALUE,CLMIN,CLMAX) ( max( (CLMIN), min((CLVALUE), (CLMAX)) ) )
+
+#define ISINRANGE(val, min, max) (min <= val && val <= max)
